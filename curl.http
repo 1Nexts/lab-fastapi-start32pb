@@ -1,0 +1,237 @@
+
+## ============= User ============================
+
+### register
+curl -X 'POST' \
+  'http://localhost:8081/api/v2/register' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "username": "game",
+  "password": "1234",
+  "level": "normal"
+}'
+
+### login
+curl -X 'POST' \
+  'http://localhost:8081/api/v2/login' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "username": "game",
+  "password": "1234"  
+}'
+
+
+
+## ============= Machine ============================
+
+### Get all machine
+curl -X 'GET' \
+  'http://172.104.167.253:8081/api/v2/machine/' \
+  -H 'accept: application/json'
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d '{}'
+
+### Get manchine by id *rawsql
+# curl -X 'GET' \
+#   'http://localhost:8081/api/v2/machine/rawsql/1' \
+#   -H 'accept: application/json'
+#   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+#   -d '{}'
+
+### Get maachine by id
+curl -X 'GET' \
+  'http://localhost:8081/api/v2/machine/4' \
+  -H 'accept: application/json'
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d '{}'
+
+### Create machine
+curl -X 'POST' \
+  'http://localhost:8081/api/v2/machine/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d 'name=Machine%201006&temperature=33&sensor_a=10&sensor_b=20&status=0'
+
+### Update Machine
+curl -X 'PUT' \
+  'http://localhost:8081/api/v2/machine/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d 'id=1&name=AAAAbbb&temperature=111&sensor_a=222&sensor_b=333&status=4'
+
+### Delete Machine
+curl -X 'DELETE' \
+  'http://localhost:8081/api/v2/machine/2' \
+  -H 'accept: application/json'
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d '{}'
+
+
+
+
+
+## ============= Employee ============================
+
+### Get all employee
+curl -X 'GET' \
+  'http://localhost:8081/api/v2/employee/' \
+  -H 'accept: application/json'
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d '{}'
+
+
+### Get Employee by id
+curl -X 'GET' \
+  'http://localhost:8081/api/v2/employee/1' \
+  -H 'accept: application/json'
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d '{}'
+
+# ### Get Employee by id  Raw SQL
+# curl -X 'GET' \
+#   'http://localhost:8081/api/v2/employee/rawsql/1' \
+#   -H 'accept: application/json'
+#   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+#   -d '{}'
+
+### Delete Employee by id
+curl -X 'DELETE' \
+  'http://localhost:8081/api/v2/employee/1' \
+  -H 'accept: application/json'
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d '{}'
+
+### Update Employee by id
+curl -X 'PUT' \
+  'http://localhost:8081/api/v2/employee/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'gender=M' \
+  -F 'stack_interest=Ninja A,Ninja-B' \
+  -F 'date_of_birth=2022-12-29 16:39:44' \
+  -F 'province_id=123' \
+  -F 'phone=111112222' \
+  -F 'note=Like ninja note 555555' \
+  -F 'last_name=Ninja' \
+  -F 'first_name=Naruto' \
+  -F 'id=8' \
+  -F 'image=@naruto-profile.jpeg;type=image/jpeg' \
+  -F 'email=naruto@gmail.com'
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d '{}'
+
+### Crearte user  *Use Swagger
+curl -X 'POST' \
+'http://localhost:8081/api/v2/employee/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'gender=M' \
+  -F 'stack_interest=Cartoon,Anime' \
+  -F 'date_of_birth=2022-07-29T16:39:44' \
+  -F 'province_id=11' \
+  -F 'phone=11111111' \
+  -F 'note=Note xxxxx' \
+  -F 'last_name=last_nameaaaa' \
+  -F 'first_name=first_nameaaa' \
+  -F 'id=' \
+  -F 'image=null' \
+  -F 'email=game1nexts@gmail.com' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM' \
+  -d '{}'
+
+
+
+
+
+
+
+
+
+### add product
+# curl -X 'POST' \
+#   'http://localhost:8081/api/v2/product/' \
+#   -H 'accept: application/json' \
+#   -H 'Content-Type: application/x-www-form-urlencoded' \
+#   -d 'id=&name=test2&price=211&stock=233'
+
+### add product using curl (support only in terminal)
+curl -X 'POST' \
+'http://localhost:8081/api/v2/product/' \
+-H 'accept: application/json' \
+-H 'Content-Type: multipart/form-data' \
+-F 'image=@test.jpg;type=image/jpeg' \
+-F 'name=test2' \
+-F 'price=232' \
+-F 'stock=34' \
+-d '{}'
+
+### update product using curl (support only in terminal)
+curl -X 'PUT' \
+'http://localhost:8081/api/v2/product/' \
+-H 'accept: application/json' \
+-H 'Content-Type: multipart/form-data' \
+-F 'id=3' \
+-F 'image=@test2.jpg;type=image/jpeg' \
+-F 'name=test3' \
+-F 'price=100' \
+-F 'stock=200' \
+-d '{}'
+
+### query all products
+curl -X 'GET' \
+  'http://localhost:8081/api/v2/product/' \
+  -H 'accept: application/json'
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d '{}'
+  
+### query all products rawsql
+# curl -X 'GET' \
+#   'http://localhost:8081/api/v2/product/rawsql' \
+#   -H 'accept: application/json'
+#   -H 'Content-Type: application/json' \
+#   -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+#   -d '{}'
+
+  
+### query product by id
+curl -X 'GET' \
+  'http://localhost:8081/api/v2/product/2' \
+  -H 'accept: application/json'
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d '{}'
+
+### delete product by id
+curl -X 'DELETE' \
+  'http://localhost:8081/api/v2/product/4' \
+  -H 'accept: application/json'
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+
+
+### add transaction
+curl -X 'POST' \
+  'http://localhost:8081/api/v2/transaction/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM' \
+  -d '{
+  "total": 0,
+  "paid": 0,
+  "change": 0,
+  "payment_type": "cash",
+  "payment_detail": "none",
+  "order_list": "[]",
+  "staff_id": "admin"
+}'
+
+
+### query transaction
+curl -X 'GET' \
+  'http://localhost:8081/api/v2/transaction' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJnYW1lIiwiZXhwIjoxNjYwOTEwNTI4fQ.OKTm-igEBEe326R2r_FGNiK1rtCsbe30Az-Fxzbo9FM'
+  -d '{}'
